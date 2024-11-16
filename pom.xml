@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.teampb.soco.llm</groupId>
-    <artifactId>ollama-vaadin-quarkus</artifactId>
+    <artifactId>ollama4j-ui</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -51,6 +51,13 @@
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.ollama4j</groupId>
+            <artifactId>ollama4j</artifactId>
+            <version>1.0.89</version>
+        </dependency>
+
         <!-- JNA-Updates as oshi component does not pull latest version -->
         <dependency>
             <groupId>net.java.dev.jna</groupId>
