@@ -1,5 +1,6 @@
 package de.teampb.soco.llm.guitester.view.chat;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.messages.MessageInput;
 import com.vaadin.flow.component.messages.MessageList;
@@ -58,8 +59,14 @@ public class ImageChatView extends VerticalLayout {
             InputStream fileInputStream = buffer.getInputStream(fileName);
             addFileToImages(fileInputStream);
         });
+        Button clearButton = new Button("Clear Chat");
+        clearButton.addClickListener(c -> {
+            getUI().ifPresent(ui -> ui.access(
+                    this::clearChat
+            ));
+        });
 
-        HorizontalLayout inputHorizontalLayout = new HorizontalLayout(input,upload);
+        HorizontalLayout uploadHorizontalLayout = new HorizontalLayout(upload,clearButton);
         this.setPadding(true); // Leave some white space
         this.setHeightFull(); // We maximize to window
         this.setWidthFull();
@@ -67,8 +74,8 @@ public class ImageChatView extends VerticalLayout {
         input.setWidthFull(); // Full width only
         chat.setMaxWidth("1200px"); // Limit the width
         //input.setMaxWidth("1100px");
-        inputHorizontalLayout.setMaxWidth("1200px");
-        add(header, chat, input, upload);
+        uploadHorizontalLayout.setMaxWidth("1200px");
+        add(header, chat, input, uploadHorizontalLayout);
     }
 
     private void addFileToImages(InputStream fileInputStream) {
@@ -111,6 +118,12 @@ public class ImageChatView extends VerticalLayout {
                     });
         });
         t.start();
+    }
+
+    public void clearChat(){
+        chatEntries.clear();
+        chat.setItems(chatEntries);
+        imagesForMessage.clear();
     }
 
 }
