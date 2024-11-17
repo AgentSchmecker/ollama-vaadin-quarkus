@@ -27,6 +27,7 @@ import de.teampb.soco.llm.guitester.service.ModelService;
 import de.teampb.soco.llm.guitester.service.OllamaService;
 import de.teampb.soco.llm.guitester.view.chat.ImageChatView;
 import de.teampb.soco.llm.guitester.view.chat.SimpleChatView;
+import de.teampb.soco.llm.guitester.view.generate.GenerateImageView;
 import de.teampb.soco.llm.guitester.view.generate.SimpleGenerateView;
 import de.teampb.soco.llm.guitester.view.model.ListModelsView;
 import de.teampb.soco.llm.guitester.view.model.PullModelView;
@@ -83,8 +84,13 @@ public class MainLayout extends AppLayout{
         // add generate accordion to drawer menu
         Accordion generateAccordion = new Accordion();
         RouterLink simpleGenerateRouterLink = new RouterLink("Simple generate", SimpleGenerateView.class);
-        simpleChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
-        generateAccordion.add("Generate",simpleGenerateRouterLink);
+        simpleGenerateRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
+        RouterLink generateImageRouterLink = new RouterLink("Generate image", GenerateImageView.class);
+        generateImageRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
+        VerticalLayout generateVerticalLayout = new VerticalLayout(simpleGenerateRouterLink,generateImageRouterLink);
+        generateVerticalLayout.setPadding(false);
+
+        generateAccordion.add("Generate",generateVerticalLayout);
 
 
         // add models accordion to drawer menu
