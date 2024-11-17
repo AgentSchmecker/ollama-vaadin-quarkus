@@ -1,4 +1,4 @@
-package de.teampb.soco.llm.ollama4j.ui.service;
+package de.teampb.soco.llm.guitester.service;
 
 import io.github.ollama4j.OllamaAPI;
 import io.github.ollama4j.exceptions.OllamaBaseException;

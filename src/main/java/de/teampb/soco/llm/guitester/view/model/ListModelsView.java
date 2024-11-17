@@ -1,9 +1,9 @@
-package de.teampb.soco.llm.ollama4j.ui.view.model;
+package de.teampb.soco.llm.guitester.view.model;
 
 import java.util.stream.Stream;
 
-import de.teampb.soco.llm.ollama4j.ui.service.ModelService;
-import de.teampb.soco.llm.ollama4j.ui.template.MainLayout;
+import de.teampb.soco.llm.guitester.service.ModelService;
+import de.teampb.soco.llm.guitester.template.MainLayout;
 import io.github.ollama4j.models.response.Model;
 import io.github.ollama4j.models.response.ModelDetail;
 import org.slf4j.Logger;

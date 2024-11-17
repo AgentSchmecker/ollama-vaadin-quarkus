@@ -1,4 +1,4 @@
-package de.teampb.soco.llm.ollama4j.ui.view.generate;
+package de.teampb.soco.llm.guitester.view.generate;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -8,8 +8,8 @@ import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import de.teampb.soco.llm.ollama4j.ui.service.GenerateService;
-import de.teampb.soco.llm.ollama4j.ui.template.MainLayout;
+import de.teampb.soco.llm.guitester.service.GenerateService;
+import de.teampb.soco.llm.guitester.template.MainLayout;
 import jakarta.inject.Inject;
 
 @Route(value = "generate/simple", layout = MainLayout.class)

@@ -1,4 +1,4 @@
-package de.teampb.soco.llm.ollama4j.ui.service;
+package de.teampb.soco.llm.guitester.service;
 
 import io.github.ollama4j.OllamaAPI;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -11,11 +11,11 @@ public class OllamaService {
     private OllamaAPI instance;
 
     @Inject
-    @ConfigProperty(name="de.teampb.soco.llm.ollama4j.ui.ollama.url",defaultValue = "ö")
+    @ConfigProperty(name="de.teampb.soco.llm.guitester.url",defaultValue = "ö")
     private String url;
-    @Inject @ConfigProperty(name="de.teampb.soco.llm.ollama4j.ui.ollama.defaultmodel",defaultValue = "llama2")
+    @Inject @ConfigProperty(name="de.teampb.soco.llm.guitester.defaultmodel",defaultValue = "llama2")
     private String model;
-    @Inject @ConfigProperty(name="de.teampb.soco.llm.ollama4j.ui.ollama.timeout",defaultValue = "120")
+    @Inject @ConfigProperty(name="de.teampb.soco.llm.guitester.timeout",defaultValue = "120")
     private  Integer requestTimeout;
 
     public String getModel() {

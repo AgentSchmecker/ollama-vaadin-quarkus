@@ -1,4 +1,4 @@
-package de.teampb.soco.llm.ollama4j.ui.template;
+package de.teampb.soco.llm.guitester.template;
 
 import java.util.List;
 import com.vaadin.flow.component.accordion.Accordion;
@@ -23,13 +23,13 @@ import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.router.HighlightConditions;
 import com.vaadin.flow.router.RouterLink;
 
-import de.teampb.soco.llm.ollama4j.ui.service.ModelService;
-import de.teampb.soco.llm.ollama4j.ui.service.OllamaService;
-import de.teampb.soco.llm.ollama4j.ui.view.chat.ImageChatView;
-import de.teampb.soco.llm.ollama4j.ui.view.chat.SimpleChatView;
-import de.teampb.soco.llm.ollama4j.ui.view.generate.SimpleGenerateView;
-import de.teampb.soco.llm.ollama4j.ui.view.model.ListModelsView;
-import de.teampb.soco.llm.ollama4j.ui.view.model.PullModelView;
+import de.teampb.soco.llm.guitester.service.ModelService;
+import de.teampb.soco.llm.guitester.service.OllamaService;
+import de.teampb.soco.llm.guitester.view.chat.ImageChatView;
+import de.teampb.soco.llm.guitester.view.chat.SimpleChatView;
+import de.teampb.soco.llm.guitester.view.generate.SimpleGenerateView;
+import de.teampb.soco.llm.guitester.view.model.ListModelsView;
+import de.teampb.soco.llm.guitester.view.model.PullModelView;
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
 

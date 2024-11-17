@@ -1,4 +1,4 @@
-package de.teampb.soco.llm.ollama4j.ui.app;
+package de.teampb.soco.llm.guitester.app;
 
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Push;
