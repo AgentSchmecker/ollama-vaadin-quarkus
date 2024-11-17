@@ -25,6 +25,7 @@ import com.vaadin.flow.router.RouterLink;
 
 import de.teampb.soco.llm.guitester.service.ModelService;
 import de.teampb.soco.llm.guitester.service.OllamaService;
+import de.teampb.soco.llm.guitester.view.chat.DataChatView;
 import de.teampb.soco.llm.guitester.view.chat.ImageChatView;
 import de.teampb.soco.llm.guitester.view.chat.SimpleChatView;
 import de.teampb.soco.llm.guitester.view.chat.ToolChatView;
@@ -80,7 +81,9 @@ public class MainLayout extends AppLayout{
         imageChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
         RouterLink toolChatRouterLink = new RouterLink("Tool Chat", ToolChatView.class);
         toolChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
-        VerticalLayout chatVerticalLayout = new VerticalLayout(simpleChatRouterLink,imageChatRouterLink,toolChatRouterLink);
+        RouterLink dataChatRouterLink = new RouterLink("Data Chat", DataChatView.class);
+        dataChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
+        VerticalLayout chatVerticalLayout = new VerticalLayout(simpleChatRouterLink,imageChatRouterLink,toolChatRouterLink,dataChatRouterLink);
         chatVerticalLayout.setPadding(false);
         chatAccordion.add("Chat",chatVerticalLayout);
 

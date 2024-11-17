@@ -1,5 +1,6 @@
 package de.teampb.soco.llm.guitester.service;
 
+import de.teampb.soco.llm.guitester.service.aiservices.DataAiService;
 import de.teampb.soco.llm.guitester.service.aiservices.UserAiService;
 import dev.langchain4j.agent.tool.P;
 import dev.langchain4j.agent.tool.Tool;
@@ -15,6 +16,7 @@ import jakarta.inject.Inject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.net.URI;
+import java.util.UUID;
 
 
 @ApplicationScoped
@@ -24,6 +26,9 @@ public class LangchainService {
 
     @Inject
     UserAiService userAiService;
+
+    @Inject
+    DataAiService dataAiService;
 
     public URI generateImageToPrompt(String prompt){
         final OpenAiImageModel model = OpenAiImageModel.builder()
@@ -49,6 +54,11 @@ public class LangchainService {
         else{
             return userAiService.getUserInformationWithoutUsername(1);
         }
+    }
+
+    @ActivateRequestContext
+    public String requestDataWithTools(int memoryId,String prompt){
+       return dataAiService.askDataQuestion(UUID.nameUUIDFromBytes(String.valueOf(memoryId).getBytes()),prompt);
     }
 
 
