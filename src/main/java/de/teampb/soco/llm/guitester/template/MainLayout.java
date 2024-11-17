@@ -27,6 +27,7 @@ import de.teampb.soco.llm.guitester.service.ModelService;
 import de.teampb.soco.llm.guitester.service.OllamaService;
 import de.teampb.soco.llm.guitester.view.chat.ImageChatView;
 import de.teampb.soco.llm.guitester.view.chat.SimpleChatView;
+import de.teampb.soco.llm.guitester.view.chat.ToolChatView;
 import de.teampb.soco.llm.guitester.view.generate.GenerateImageView;
 import de.teampb.soco.llm.guitester.view.generate.SimpleGenerateView;
 import de.teampb.soco.llm.guitester.view.model.ListModelsView;
@@ -77,7 +78,9 @@ public class MainLayout extends AppLayout{
         simpleChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
         RouterLink imageChatRouterLink = new RouterLink("Image Chat", ImageChatView.class);
         imageChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
-        VerticalLayout chatVerticalLayout = new VerticalLayout(simpleChatRouterLink,imageChatRouterLink);
+        RouterLink toolChatRouterLink = new RouterLink("Tool Chat", ToolChatView.class);
+        toolChatRouterLink.setHighlightCondition(HighlightConditions.sameLocation());
+        VerticalLayout chatVerticalLayout = new VerticalLayout(simpleChatRouterLink,imageChatRouterLink,toolChatRouterLink);
         chatVerticalLayout.setPadding(false);
         chatAccordion.add("Chat",chatVerticalLayout);
 
